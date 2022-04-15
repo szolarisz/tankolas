@@ -1,40 +1,57 @@
+:root{
+    --bgFooter: darksalmon;
+    --colorFooter: azure;
+    --btnHoverColor: rgb(231, 91, 91);
+    --btnHoverBGColor: orange;
+    --btnLekerdezoColor: lime;
+    --btnModositoColor: goldenrod;
+    --btnTorloColor: silver;
+    --frameHeigth: 40px;
+
+
+}
 body{
     background-color: azure;
 
 }
+
 select{
     margin: 15px;
     
 }
 button{
-    margin: 20px;
-    background-color: blue;
+    margin: 5px;
     color: white;
     font-weight: bold;
     box-shadow: 1px 1px 2px rgb(41, 39, 39);
     border-radius: 8px;
-    padding: 10px;
+    padding: 7px;
+}
+
+.btnLekerdezo{
+    background-color: var(--btnLekerdezoColor);
+}
+
+.btnModosito{
+    background-color: var(--btnModositoColor);
+}
+
+.btnTorlo{
+    background-color: var(--btnTorloColor);
 }
 button:hover{
     cursor: pointer;
+    background-color:var(--btnHoverBGColor);
+    color: var(--btnHoverColor)
 }
-#BTNrogzit, #BTNberogzit{
-    background-color: rgb(15, 94, 15);
-}
-#BTNtorol{
-    background-color: rgb(177, 34, 34);
-    margin: 5px;
-}
-#BTNmodosit{
-    margin: 5px;
-}
+
 h1{
     margin-top: 20px;
     margin-bottom: 30px;
     padding: 20px;
     background-color: gainsboro;
     text-align: center;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid RGB(200, 200, 255);
 }
 p, label{
     font-weight: bold;
@@ -47,8 +64,18 @@ p, label{
 table{
     margin-top: 20px;
 }
-footer{
+
+#footer {
+    background-color: var(--bgFooter);
+    color: var(--colorFooter);
+    height: var(--frameHeigth);
+    margin: 10px auto 0 auto;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.item{
     text-align: right;
-    margin-top: 30px;
-    color: rgb(192, 188, 188);
 }
