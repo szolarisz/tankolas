@@ -17,7 +17,7 @@ initDB(( err, {fuelModel, saveDB}) =>{
     }
     require("./router/router")(app, {fuelModel, saveDB});
     app.listen(port, () =>{
-        console.log(`Várom a kéréseket a következő porton: ${port}`)
+        console.log(`Várom a kéréseket a következő porton: ${port}!`)
     })
 
 })

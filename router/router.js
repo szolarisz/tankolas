@@ -30,6 +30,8 @@ const uuid = require('uuid');
 //MW
 const testMW = require('../middlewares/teszt');
 const renderMW = require('../middlewares/render');
+const autoListMW = require('../middlewares/autolist');
+
 
 module.exports = function (app, { fuelModel, saveDB }) {
     const objRepo = {
@@ -39,7 +41,7 @@ module.exports = function (app, { fuelModel, saveDB }) {
     };
 
     app.get('/', testMW(objRepo),renderMW(objRepo, "index"));
-    app.get('/auto', testMW(objRepo), renderMW(objRepo, "index"));
+    app.get('/auto', testMW(objRepo), autoListMW(objRepo), renderMW(objRepo, "index"));
     app.get('/auto/:frgsz', testMW(objRepo),renderMW(objRepo, "index"));
     app.put('/tankolas', testMW(objRepo),renderMW(objRepo, "index"));
     app.patch('/tankolas/:id', testMW(objRepo),renderMW(objRepo, "index"));
