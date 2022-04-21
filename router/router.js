@@ -35,6 +35,7 @@ const autoTankolasMW = require('../middlewares/autotankolas');
 const deleteTankolasMW = require('../middlewares/deletetankolas');
 const keresTankolasMW = require('../middlewares/kerestankolas');
 const modositTankolasMW = require('../middlewares/modosittankolas');
+const adottAutoListMW = require('../middlewares/adottautolist');
 
 
 module.exports = function (app, { fuelModel, saveDB }) {
@@ -46,7 +47,7 @@ module.exports = function (app, { fuelModel, saveDB }) {
 
     app.get('/', autoListMW(objRepo), renderMW(objRepo, "index"));
     app.get('/auto',  autoListMW(objRepo), renderMW(objRepo, "index")); // kész
-    app.get('/auto/:frgsz', testMW(objRepo),renderMW(objRepo, "index"));
+    app.get('/auto/:frgsz', adottAutoListMW(objRepo), renderMW(objRepo, "index"));
     app.post('/ujtankolas', autoTankolasMW(objRepo));// kész
     app.get('/delete/:id', keresTankolasMW(objRepo), deleteTankolasMW(objRepo));// kész
     

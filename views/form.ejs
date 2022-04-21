@@ -3,9 +3,9 @@
 
     <div class="col-3">
 
+        <label for="rendszam">Válassz autót!</label>
         <select name="rendszam" id="rendszam" class="form-select" aria-label="Default select example">
-            <option selected>---Válassz autót!--- </option>
-            <option value="ABC-123">Ford Fiesta - ABC-123 </option>
+            <option selected value="ABC-123">Ford Fiesta - ABC-123 </option>
             <option value="ZXY-987">Opel Mokka - ZXY-987</option>
             <option value="AUDI-01">Audi A6 - AUDI-01</option>
         </select>
@@ -26,8 +26,8 @@
         <div><button class="btnModosito" id="btnRogzit" type="submit">Új tankolás rögzítése</button>
         </div>
         <div><a href="/auto"><button class="btnLekerdezo" id="btnLekerdez" >Tankolási adatok listája</button></a></div>
-        <div><a href="/auto/ABC-123"><button class="btnLekerdezo" id="btnLekerdezAuto" >Tankolási adatok listája a kiválasztott
-                    autóra</button></a></div>
+        <div><button class="btnLekerdezo" id="btnLekerdezAuto" type="button">Tankolási adatok listája a kiválasztott
+                    autóra</button></div>
     </div>
 
 </div></form>
