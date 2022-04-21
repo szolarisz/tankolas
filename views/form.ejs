@@ -1,28 +1,33 @@
+<form action="/ujtankolas" method="POST">
 <div class="row">
+
     <div class="col-3">
 
-        <select class="form-select" aria-label="Default select example">
+        <select name="rendszam" id="rendszam" class="form-select" aria-label="Default select example">
             <option selected>---Válassz autót!--- </option>
-            <option value="0">Ford Fiesta - ABC-123 </option>
-            <option value="1">Opel Mokka - ZXY-987</option>
-            <option value="2">Audi A6 - AUDI-01</option>
+            <option value="ABC-123">Ford Fiesta - ABC-123 </option>
+            <option value="ZXY-987">Opel Mokka - ZXY-987</option>
+            <option value="AUDI-01">Audi A6 - AUDI-01</option>
         </select>
     </div>
     <div class="col-5">
 
         <div class="form-floating mb-3">
-            <input type="number" class="form-control" id="liter" placeholder="Tankolt üzemanyag mennyisége (liter)">
+            <input type="number" class="form-control" name="liter" placeholder="Tankolt üzemanyag mennyisége (liter)">
             <label for="floatingInput">Tankolt mennyiség (liter):</label>
         </div>
 
         <div class="form-floating mb-3">
-            <input type="number" class="form-control" id="km" placeholder="Kilométer állás:">
+            <input type="number" class="form-control" name="km" placeholder="Kilométer állás:">
             <label for="floatingPassword">Kilométer állás:</label>
         </div>
     </div>
     <div class="col-4">
-        <div><a href="#"><button class="btnModosito" id="btnRogzit">Új tankolás rögzítése</button></a></div>
-        <div><a href="#"><button class="btnLekerdezo" id="btnLekerdez">Tankolási adatok listája</button></a></div>
-        <div><a href="#"><button class="btnLekerdezo" id="btnLekerdezAuto">Tankolási adatok listája a kiválasztott autóra</button></a></div>
+        <div><button class="btnModosito" id="btnRogzit" type="submit">Új tankolás rögzítése</button>
+        </div>
+        <div><a href="/auto"><button class="btnLekerdezo" id="btnLekerdez" >Tankolási adatok listája</button></a></div>
+        <div><a href="/auto/ABC-123"><button class="btnLekerdezo" id="btnLekerdezAuto" >Tankolási adatok listája a kiválasztott
+                    autóra</button></a></div>
     </div>
-</div>
+
+</div></form>

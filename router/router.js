@@ -31,6 +31,10 @@ const uuid = require('uuid');
 const testMW = require('../middlewares/teszt');
 const renderMW = require('../middlewares/render');
 const autoListMW = require('../middlewares/autolist');
+const autoTankolasMW = require('../middlewares/autotankolas');
+const deleteTankolasMW = require('../middlewares/deletetankolas');
+const keresTankolasMW = require('../middlewares/kerestankolas');
+const modositTankolasMW = require('../middlewares/modosittankolas');
 
 
 module.exports = function (app, { fuelModel, saveDB }) {
@@ -40,12 +44,15 @@ module.exports = function (app, { fuelModel, saveDB }) {
         saveDB
     };
 
-    app.get('/', testMW(objRepo),renderMW(objRepo, "index"));
-    app.get('/auto', testMW(objRepo), autoListMW(objRepo), renderMW(objRepo, "index"));
+    app.get('/', autoListMW(objRepo), renderMW(objRepo, "index"));
+    app.get('/auto',  autoListMW(objRepo), renderMW(objRepo, "index")); // kész
     app.get('/auto/:frgsz', testMW(objRepo),renderMW(objRepo, "index"));
-    app.put('/tankolas', testMW(objRepo),renderMW(objRepo, "index"));
-    app.patch('/tankolas/:id', testMW(objRepo),renderMW(objRepo, "index"));
-    app.delete('/tankolas/:id', testMW(objRepo),renderMW(objRepo, "index"));
+    app.post('/ujtankolas', autoTankolasMW(objRepo));// kész
+    app.get('/delete/:id', keresTankolasMW(objRepo), deleteTankolasMW(objRepo));// kész
+    
+    app.use('/modositas/:id', keresTankolasMW(objRepo), modositTankolasMW(objRepo));
+    //app.put('/modositas/:id', testMW(objRepo),renderMW(objRepo, "index"));
+    
 
     return app;
 }

@@ -1,0 +1,27 @@
+<form action="/modositas/<%= id %>" method="POST">
+    <div class="row">
+    
+        <div class="col-3">
+            <h5>Az autó rendszáma:<br><span class="fontos"><%= tankolas.rendszam %></span></h5>
+            <h5>A tankolás dátuma:<br><span class="fontos"><%= tankolas.idopont %></span></h5>
+            
+        </div>
+        <div class="col-5">
+    
+            <div class="form-floating mb-3">
+                <input value=<%= tankolas.mennyiseg %> type="number" class="form-control" name="liter" placeholder="Tankolt üzemanyag mennyisége (liter)">
+                <label for="floatingInput">Tankolt mennyiség (liter):</label>
+            </div>
+    
+            <div class="form-floating mb-3">
+                <input value=<%= tankolas.kmora %> type="number" class="form-control" name="km" placeholder="Kilométer állás:">
+                <label for="floatingPassword">Kilométer állás:</label>
+            </div>
+        </div>
+        <div class="col-4">
+            <div><button class="btnModosito" id="btnRogzit" type="submit">Új tankolás rögzítése</button>
+            </div>
+           </div>
+        </div>
+    
+    </div></form>

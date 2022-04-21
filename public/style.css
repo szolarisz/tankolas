@@ -97,3 +97,11 @@ table{
 .item{
     text-align: right;
 }
+
+h5{
+    text-align:center
+}
+
+h5 .fontos{
+    color: crimson;
+}

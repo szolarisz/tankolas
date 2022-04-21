@@ -12,14 +12,19 @@
                 </tr>
             </thead>
             <tbody>
+                <% for(tankolas of tankolasok){ %>
                 <tr>
-                    <th scope="row"><%= %></th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a href="#"><button class="btnModosito" id="btnModosit">módosítás</button></a></td>
-                    <td><a href="#"><button class="btnTorlo" id="btnTorol">törlés</button></a></td>
+                    
+                    <th scope="row"><%= tankolas.rendszam%></th>
+                   
+                    <td><%= tankolas.idopont%></td>
+                    <td><%= tankolas.mennyiseg%></td>
+                    <td> <%= tankolas.kmora%></td>
+                    <td><a href="/modositas/<%= tankolas.id %>"><button class="btnModosito" id="btnModosit">módosítás</button></a></td>
+                    <td><a href="/delete/<%= tankolas.id %>"><button class="btnTorlo" id="btnTorol">törlés</button></a></td> 
+                    
                 </tr>
+                <% } %>
             </tbody>
         </table>
     </div>

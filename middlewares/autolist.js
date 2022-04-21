@@ -4,19 +4,19 @@ module.exports = function (objRepo) {
     return (req, res, next) => {
         res.locals.tankolasok = fuelModel.find({
         })
-        console.log("Autolist jelenti:");
+        //console.log("Autolist jelenti:");
         
         if (res.locals.tankolasok.length === 0) {
-            res.locals.tankolasok = {
+            res.locals.tankolasok =[{
                 "id" : "1",
-                "rendszam" : "-",
-                "idopont" : "-",
-                "mennyiseg" : "-",
-                "kmora" : "-"
-            }
+                "rendszam" : "nincs rögzítve még",
+                "idopont" : "2022.11.14",
+                "mennyiseg" : "0",
+                "kmora" : "0"
+            }]
           
         }
-        console.log(res.locals.tankolasok);
+        //console.log(res.locals.tankolasok);
         return next();
     }
 }
