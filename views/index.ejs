@@ -5,8 +5,9 @@
   <%- include('bodyheader')%>
     
   <%- include('form')%>
-    
-  <%- include('listtable')%>
+  <% if( url === '/auto'){%>  
+    <%- include('listtable')%>
+  <%}%>
   
     
 </div>

@@ -5,7 +5,7 @@ module.exports = function (objRepo) {
         res.locals.tankolasok = fuelModel.find({
         })
         //console.log("Autolist jelenti:");
-        
+        res.locals.url = req.url;
         if (res.locals.tankolasok.length === 0) {
             res.locals.tankolasok =[{
                 "id" : "1",

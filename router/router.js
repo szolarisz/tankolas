@@ -50,7 +50,7 @@ module.exports = function (app, { fuelModel, saveDB }) {
     app.post('/ujtankolas', autoTankolasMW(objRepo));// kész
     app.get('/delete/:id', keresTankolasMW(objRepo), deleteTankolasMW(objRepo));// kész
     
-    app.use('/modositas/:id', keresTankolasMW(objRepo), modositTankolasMW(objRepo));
+    app.use('/modositas/:id', keresTankolasMW(objRepo), modositTankolasMW(objRepo));// kész
     //app.put('/modositas/:id', testMW(objRepo),renderMW(objRepo, "index"));
     
 
